@@ -5,6 +5,13 @@ class ScrollSpy {
     if (duration) this.duration = duration;
   }
 
+  /* 
+  * It get two parameter:
+  *   - The targetPosition argument specifies the destination point that you want to scroll to.
+  *   - The duration argument determines how long the animation will take to be executed.
+  * ------
+  * note: The requestAnimationFrame method is a browser API method.
+  */
   private smoothScroll = (targetPosition: number, duration = 500) => {
     const startPosition = window.scrollY;
     let startTime = 0;
