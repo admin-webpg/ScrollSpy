@@ -7,6 +7,8 @@ class ScrollSpy {
         const links = document.querySelectorAll('[data-wg-link]')
 
         if (links) {
+            document.addEventListener('scroll', this.handleUserScroll)
+
             links.forEach((link, index) => {
                 if (index === 0) link.classList.add('active')
                 link.addEventListener('click', this.handleClickOnLinkItem)
@@ -72,5 +74,40 @@ class ScrollSpy {
 
         const sectionRect = sectionEl.getBoundingClientRect()
         this.smoothScroll(Math.ceil(sectionRect.top), this.duration)
+    }
+
+    private handleUserScroll = (_: Event) => {
+        const sections = document.querySelectorAll('[data-wg-section]')
+
+        const currentSection = Array.from(sections).find((section) => {
+            const rect = section.getBoundingClientRect()
+
+            const availableSpace = rect.height - Math.abs(rect.top)
+
+            if (availableSpace > rect.height / 2 || rect.top > 0) {
+                return section
+            }
+        })
+
+        const allLinks = document.querySelectorAll('[data-wg-link]')
+        const filteredLinks = Array.from(allLinks).filter(
+            (link) =>
+                link.getAttribute('data-wg-link') !==
+                `#${currentSection?.getAttribute('data-wg-section')}`
+        )
+
+        filteredLinks.forEach(
+            (link) =>
+                link.classList.contains('active') &&
+                link.classList.remove('active')
+        )
+
+        const linkEl = document.querySelector(
+            `[data-wg-link="#${currentSection!.getAttribute(
+                'data-wg-section'
+            )!}"]`
+        )
+        if (!linkEl?.classList.contains('active'))
+            linkEl?.classList.add('active')
     }
 }
