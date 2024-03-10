@@ -1,0 +1,23 @@
+{
+  "name": "@web-pg/ScrollSpy",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/ScrollSpy.umd.cjs",
+  "module": "./dist/ScrollSpy.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ScrollSpy.js",
+      "require": "./dist/ScrollSpy.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
+}
