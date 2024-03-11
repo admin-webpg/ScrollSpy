@@ -1,4 +1,4 @@
-class ScrollSpy {
+export class ScrollSpy {
     private duration: number = 500
 
     constructor(duration?: number) {
