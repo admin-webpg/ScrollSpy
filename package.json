@@ -1,6 +1,6 @@
 {
-  "name": "@web-pg/ScrollSpy",
-  "private": true,
+  "name": "@webpg/scroll-spy",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/ScrollSpy.umd.cjs",
@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3"
   }
 }
