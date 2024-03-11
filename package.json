@@ -1,10 +1,10 @@
 {
   "name": "@webpg/scroll-spy",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.3",
   "type": "module",
-  "main": "./dist/ScrollSpy.umd.cjs",
-  "module": "./dist/ScrollSpy.js",
+  "module": "./dist/ScrollSpy.umd.cjs",
+  "main": "./dist/ScrollSpy.js",
   "exports": {
     ".": {
       "import": "./dist/ScrollSpy.js",
@@ -20,5 +20,20 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-plugin-dts": "^3.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admin-webpg/ScrollSpy"
+  },
+  "keywords": [
+    "Scroll Spy",
+    "Smooth Scroll",
+    "ScrollSpy",
+    "Scroll Library"
+  ],
+  "author": {
+    "name": "Mohsen Falahnejad",
+    "email": "contact.webpg@gmail.com",
+    "url": "https://github.com/admin-webpg"
   }
 }
